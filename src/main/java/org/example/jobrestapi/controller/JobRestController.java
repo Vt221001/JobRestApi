@@ -3,7 +3,9 @@ package org.example.jobrestapi.controller;
 import java.util.List;
 
 import org.example.jobrestapi.model.JobPost;
+import org.example.jobrestapi.model.User;
 import org.example.jobrestapi.service.JobService;
+import org.example.jobrestapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,11 +26,15 @@ public class JobRestController {
     private JobService service;
 
 
+
     @GetMapping("jobPosts")
     public List<JobPost> getAllJobs() {
         return service.getAllJobs();
 
     }
+
+
+
 
     @GetMapping("/jobPost/{postId}")
     public JobPost getJob(@PathVariable int postId) {
